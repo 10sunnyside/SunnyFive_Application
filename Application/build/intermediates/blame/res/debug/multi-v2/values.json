@@ -1,57 +1,25 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
+            "outputFile": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml",
             "map": [
                 {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/colors.xml",
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/styles.xml",
                     "from": {
-                        "startLines": "4,16,8,6,7,5,12,13,14,10,2,3,11",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "153,632,345,243,294,199,487,536,583,391,55,102,438",
-                        "endColumns": "45,44,44,50,50,43,48,46,47,46,46,50,48",
-                        "endOffsets": "194,672,385,289,340,238,531,578,626,433,97,148,482"
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "57",
+                        "endLines": "9",
+                        "endColumns": "12",
+                        "endOffsets": "432"
                     },
                     "to": {
-                        "startLines": "192,193,194,195,196,197,198,199,200,201,202,203,204",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "9973,10019,10064,10109,10160,10211,10255,10304,10351,10399,10446,10493,10544",
-                        "endColumns": "45,44,44,50,50,43,48,46,47,46,46,50,48",
-                        "endOffsets": "10014,10059,10104,10155,10206,10250,10299,10346,10394,10441,10488,10539,10588"
-                    }
-                },
-                {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/template-dimens.xml",
-                    "from": {
-                        "startLines": "28,24,23,22,21,20,29",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "959,880,836,791,748,706,1029",
-                        "endColumns": "69,42,43,44,42,41,67",
-                        "endOffsets": "1024,918,875,831,786,743,1092"
-                    },
-                    "to": {
-                        "startLines": "413,417,418,419,420,421,497",
-                        "startColumns": "4,4,4,4,4,4,4",
-                        "startOffsets": "24600,24893,24936,24980,25025,25068,29603",
-                        "endColumns": "69,42,43,44,42,41,67",
-                        "endOffsets": "24665,24931,24975,25020,25063,25105,29666"
-                    }
-                },
-                {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/strings.xml",
-                    "from": {
-                        "startLines": "16,21,22,24,17,18,19,31,32,33,34,20,23,27,26,28",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "686,954,1002,1114,753,798,863,1415,1464,1519,1562,910,1056,1256,1198,1330",
-                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
-                        "endOffsets": "748,997,1051,1192,793,858,905,1459,1514,1557,1600,949,1109,1325,1251,1385"
-                    },
-                    "to": {
-                        "startLines": "593,597,598,599,613,614,615,616,617,618,619,621,629,630,631,632",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "35472,35861,35909,35963,36789,36834,36899,36946,36995,37050,37093,37217,38187,38245,38319,38377",
-                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
-                        "endOffsets": "35534,35904,35958,36041,36829,36894,36941,36990,37045,37088,37131,37256,38240,38314,38372,38432"
+                        "startLines": "2998",
+                        "startColumns": "4",
+                        "startOffsets": "194642",
+                        "endLines": "3005",
+                        "endColumns": "12",
+                        "endOffsets": "195010"
                     }
                 },
                 {
@@ -74,7 +42,7 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/template-styles.xml",
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/template-styles.xml",
                     "from": {
                         "startLines": "24,20,22,27,29,34",
                         "startColumns": "4,4,4,4,4,4",
@@ -110,22 +78,39 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/styles.xml",
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/base-strings.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "4",
-                        "startOffsets": "57",
-                        "endLines": "9",
-                        "endColumns": "12",
-                        "endOffsets": "432"
+                        "startLines": "18,19",
+                        "startColumns": "4,4",
+                        "startOffsets": "647,694",
+                        "endLines": "18,28",
+                        "endColumns": "46,13",
+                        "endOffsets": "689,965"
                     },
                     "to": {
-                        "startLines": "2998",
-                        "startColumns": "4",
-                        "startOffsets": "194642",
-                        "endLines": "3005",
-                        "endColumns": "12",
-                        "endOffsets": "195010"
+                        "startLines": "591,603",
+                        "startColumns": "4,4",
+                        "startOffsets": "35275,36513",
+                        "endLines": "591,612",
+                        "endColumns": "46,13",
+                        "endOffsets": "35317,36784"
+                    }
+                },
+                {
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/strings.xml",
+                    "from": {
+                        "startLines": "16,21,22,24,17,18,19,31,32,33,34,20,23,27,26,28",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "686,954,1002,1114,753,798,863,1415,1464,1519,1562,910,1056,1256,1198,1330",
+                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
+                        "endOffsets": "748,997,1051,1192,793,858,905,1459,1514,1557,1600,949,1109,1325,1251,1385"
+                    },
+                    "to": {
+                        "startLines": "593,597,598,599,613,614,615,616,617,618,619,621,629,630,631,632",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "35472,35861,35909,35963,36789,36834,36899,36946,36995,37050,37093,37217,38187,38245,38319,38377",
+                        "endColumns": "66,47,53,82,44,64,46,48,54,42,42,43,57,73,57,59",
+                        "endOffsets": "35534,35904,35958,36041,36829,36894,36941,36990,37045,37088,37131,37256,38240,38314,38372,38432"
                     }
                 },
                 {
@@ -145,6 +130,25 @@
                         "endLines": "403,404,405,414,415,416,506,4388",
                         "endColumns": "58,47,55,74,75,71,65,24",
                         "endOffsets": "23880,23928,23984,24740,24816,24888,30159,280906"
+                    }
+                },
+                {
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/timePickerStyle.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "0",
+                        "startOffsets": "53",
+                        "endLines": "7",
+                        "endColumns": "8",
+                        "endOffsets": "399"
+                    },
+                    "to": {
+                        "startLines": "2066",
+                        "startColumns": "4",
+                        "startOffsets": "131545",
+                        "endLines": "2071",
+                        "endColumns": "8",
+                        "endOffsets": "131886"
                     }
                 },
                 {
@@ -296,22 +300,20 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/timePickerStyle.xml",
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/colors.xml",
                     "from": {
-                        "startLines": "2",
-                        "startColumns": "0",
-                        "startOffsets": "53",
-                        "endLines": "7",
-                        "endColumns": "8",
-                        "endOffsets": "399"
+                        "startLines": "4,16,8,6,7,5,12,13,14,10,2,3,11",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "153,632,345,243,294,199,487,536,583,391,55,102,438",
+                        "endColumns": "45,44,44,50,50,43,48,46,47,46,46,50,48",
+                        "endOffsets": "194,672,385,289,340,238,531,578,626,433,97,148,482"
                     },
                     "to": {
-                        "startLines": "2066",
-                        "startColumns": "4",
-                        "startOffsets": "131545",
-                        "endLines": "2071",
-                        "endColumns": "8",
-                        "endOffsets": "131886"
+                        "startLines": "192,193,194,195,196,197,198,199,200,201,202,203,204",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "9973,10019,10064,10109,10160,10211,10255,10304,10351,10399,10446,10493,10544",
+                        "endColumns": "45,44,44,50,50,43,48,46,47,46,46,50,48",
+                        "endOffsets": "10014,10059,10104,10155,10206,10250,10299,10346,10394,10441,10488,10539,10588"
                     }
                 },
                 {
@@ -334,22 +336,20 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values/base-strings.xml",
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values/template-dimens.xml",
                     "from": {
-                        "startLines": "18,19",
-                        "startColumns": "4,4",
-                        "startOffsets": "647,694",
-                        "endLines": "18,28",
-                        "endColumns": "46,13",
-                        "endOffsets": "689,965"
+                        "startLines": "28,24,23,22,21,20,29",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "959,880,836,791,748,706,1029",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "1024,918,875,831,786,743,1092"
                     },
                     "to": {
-                        "startLines": "591,603",
-                        "startColumns": "4,4",
-                        "startOffsets": "35275,36513",
-                        "endLines": "591,612",
-                        "endColumns": "46,13",
-                        "endOffsets": "35317,36784"
+                        "startLines": "413,417,418,419,420,421,497",
+                        "startColumns": "4,4,4,4,4,4,4",
+                        "startOffsets": "24600,24893,24936,24980,25025,25068,29603",
+                        "endColumns": "69,42,43,44,42,41,67",
+                        "endOffsets": "24665,24931,24975,25020,25063,25105,29666"
                     }
                 }
             ]

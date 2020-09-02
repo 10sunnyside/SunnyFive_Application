@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
             "map": [
                 {
                     "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
@@ -14,7 +14,7 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values-sw600dp/template-dimens.xml",
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values-sw600dp/template-dimens.xml",
                     "from": {
                         "startLines": "20,21",
                         "startColumns": "4,4",
@@ -28,25 +28,6 @@
                         "startOffsets": "1173,1241",
                         "endColumns": "67,67",
                         "endOffsets": "1236,1304"
-                    }
-                },
-                {
-                    "source": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/res/values-sw600dp/template-styles.xml",
-                    "from": {
-                        "startLines": "18",
-                        "startColumns": "4",
-                        "startOffsets": "621",
-                        "endLines": "22",
-                        "endColumns": "12",
-                        "endOffsets": "861"
-                    },
-                    "to": {
-                        "startLines": "26",
-                        "startColumns": "4",
-                        "startOffsets": "1544",
-                        "endLines": "30",
-                        "endColumns": "12",
-                        "endOffsets": "1784"
                     }
                 },
                 {
@@ -66,6 +47,25 @@
                         "endLines": "10,11,12,13,14,15,17,18,21,25",
                         "endColumns": "59,69,70,71,57,57,10,63,62,10",
                         "endOffsets": "666,736,807,879,937,995,1104,1168,1367,1539"
+                    }
+                },
+                {
+                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values-sw600dp/template-styles.xml",
+                    "from": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "621",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "861"
+                    },
+                    "to": {
+                        "startLines": "26",
+                        "startColumns": "4",
+                        "startOffsets": "1544",
+                        "endLines": "30",
+                        "endColumns": "12",
+                        "endOffsets": "1784"
                     }
                 }
             ]

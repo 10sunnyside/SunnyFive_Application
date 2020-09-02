@@ -21,9 +21,9 @@
 21
 22    <uses-sdk
 23        android:minSdkVersion="21"
-23-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml
+23-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml
 24        android:targetSdkVersion="27" />
-24-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml
+24-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml
 25
 26    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
 27
@@ -35,69 +35,69 @@
 33    PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
 34    -->
 35    <uses-feature
-35-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:31:5-89
+35-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:31:5-89
 36        android:name="android.hardware.bluetooth_le"
-36-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:31:19-63
+36-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:31:19-63
 37        android:required="true" />
-37-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:31:64-87
+37-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:31:64-87
 38
 39    <uses-permission android:name="android.permission.BLUETOOTH" />
-39-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:33:5-67
-39-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:33:22-65
+39-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:33:5-67
+39-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:33:22-65
 40    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-40-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:34:5-73
-40-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:34:22-71
+40-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:34:5-73
+40-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:34:22-71
 41    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-41-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:35:5-79
-41-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:35:22-76
+41-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:35:5-79
+41-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:35:22-76
 42    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-42-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:36:5-81
-42-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:36:22-78
+42-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:36:5-81
+42-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:36:22-78
 43
 44    <application
-44-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:38:5-58:19
+44-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:38:5-58:19
 45        android:appComponentFactory="whateverString"
-45-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:42:9-53
+45-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:42:9-53
 46        android:debuggable="true"
 47        android:icon="@drawable/sunnyside_window"
-47-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:39:9-50
+47-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:39:9-50
 48        android:label="@string/app_name"
-48-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:38:18-50
+48-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:38:18-50
 49        android:testOnly="true"
 50        android:theme="@android:style/Theme.Holo.Light" >
-50-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:40:9-56
+50-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:40:9-56
 51        <activity
-51-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:43:9-45:20
+51-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:43:9-45:20
 52            android:name="com.example.android.bluetoothlegatt.MainActivity"
-52-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:43:19-47
+52-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:43:19-47
 53            android:theme="@style/Theme.AppCompat" >
-53-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:43:48-86
+53-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:43:48-86
 54        </activity>
 55        <activity android:name="com.example.android.bluetoothlegatt.DeviceScanActivity" >
-55-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:46:9-53:20
-55-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:46:19-53
+55-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:46:9-53:20
+55-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:46:19-53
 56            <intent-filter>
-56-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:47:9-52:25
+56-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:47:9-52:25
 57                <action android:name="android.intent.action.MAIN" />
-57-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:48:13-64
-57-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:48:21-62
+57-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:48:13-64
+57-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:48:21-62
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:50:13-72
-59-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:50:23-70
+59-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:50:13-72
+59-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:50:23-70
 60            </intent-filter>
 61        </activity>
 62        <activity android:name="com.example.android.bluetoothlegatt.DeviceControlActivity" >
-62-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:54:9-56:20
-62-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:54:19-56
+62-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:54:9-56:20
+62-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:54:19-56
 63        </activity>
 64
 65        <service
-65-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:57:9-77
+65-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:57:9-77
 66            android:name="com.example.android.bluetoothlegatt.BluetoothLeService"
-66-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:57:18-52
+66-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:57:18-52
 67            android:enabled="true" />
-67-->/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/src/main/AndroidManifest.xml:57:53-75
+67-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:57:53-75
 68        <service
 68-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/eb6d30ec76c3dcd766f0f0d51702590d/room-runtime-2.1.0-alpha06/AndroidManifest.xml:23:9-25:40
 69            android:name="androidx.room.MultiInstanceInvalidationService"

@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
+            "outputFile": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sv/values-sv.xml",
             "map": [
                 {
                     "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/values-sv/values-sv.xml",
