@@ -1,10 +1,29 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-sw600dp-v13/values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "from": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "639",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "883"
+                    },
+                    "to": {
+                        "startLines": "26",
+                        "startColumns": "4",
+                        "startOffsets": "1544",
+                        "endLines": "30",
+                        "endColumns": "12",
+                        "endOffsets": "1784"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\44eab851dec9fb407c2f231b4fc21b5a\\appcompat-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",
@@ -14,24 +33,7 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values-sw600dp/template-dimens.xml",
-                    "from": {
-                        "startLines": "20,21",
-                        "startColumns": "4,4",
-                        "startOffsets": "656,724",
-                        "endColumns": "67,67",
-                        "endOffsets": "719,787"
-                    },
-                    "to": {
-                        "startLines": "19,20",
-                        "startColumns": "4,4",
-                        "startOffsets": "1173,1241",
-                        "endColumns": "67,67",
-                        "endOffsets": "1236,1304"
-                    }
-                },
-                {
-                    "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/e0fec8bece68618988d2624f52160381/material-1.0.0-rc01/res/values-sw600dp-v13/values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\e0fec8bece68618988d2624f52160381\\material-1.0.0-rc01\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -50,22 +52,20 @@
                     }
                 },
                 {
-                    "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/values-sw600dp/template-styles.xml",
+                    "source": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
                     "from": {
-                        "startLines": "18",
-                        "startColumns": "4",
-                        "startOffsets": "621",
-                        "endLines": "22",
-                        "endColumns": "12",
-                        "endOffsets": "861"
+                        "startLines": "20,21",
+                        "startColumns": "4,4",
+                        "startOffsets": "676,745",
+                        "endColumns": "67,67",
+                        "endOffsets": "739,808"
                     },
                     "to": {
-                        "startLines": "26",
-                        "startColumns": "4",
-                        "startOffsets": "1544",
-                        "endLines": "30",
-                        "endColumns": "12",
-                        "endOffsets": "1784"
+                        "startLines": "19,20",
+                        "startColumns": "4,4",
+                        "startOffsets": "1173,1241",
+                        "endColumns": "67,67",
+                        "endOffsets": "1236,1304"
                     }
                 }
             ]

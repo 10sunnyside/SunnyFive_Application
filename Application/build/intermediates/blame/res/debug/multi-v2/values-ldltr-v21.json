@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/incremental/mergeDebugResources/merged.dir/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-ldltr-v21\\values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/values-ldltr-v21/values-ldltr-v21.xml",
+                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\44eab851dec9fb407c2f231b4fc21b5a\\appcompat-1.0.0\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

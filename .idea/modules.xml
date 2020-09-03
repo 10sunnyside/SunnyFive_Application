@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/Application.iml" group="SunnyFive_Application/Application" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SunnyFive_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/SunnyFive_Application.iml" group="SunnyFive_Application" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Application/Application.iml" filepath="$PROJECT_DIR$/.idea/modules/Application/Application.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SunnyFive_Application.iml" filepath="$PROJECT_DIR$/.idea/modules/SunnyFive_Application.iml" />
     </modules>
   </component>
 </project>

@@ -136,7 +136,8 @@ class DeviceScanActivity : ListActivity() {
         }
 
 
-        val file = File(this.filesDir, "sunnyside.txt")
+        val file = File(this.filesDir, "sunnyside1.txt")
+        //sunnyside.txt 로 고치면 기록된 아이디로 자동 로그인 동작
 
         if (file.exists()){
 
@@ -372,7 +373,10 @@ class DeviceScanActivity : ListActivity() {
 
         fun addDevice(device: BluetoothDevice) {
             if (!mLeDevices.contains(device)) {
-                mLeDevices.add(device)
+                if(device.name!=null){
+                    mLeDevices.add(device)
+                //이름 없는 디바이스들은 리스트에 추가하지 않겠음
+                }
             }
         }
 
