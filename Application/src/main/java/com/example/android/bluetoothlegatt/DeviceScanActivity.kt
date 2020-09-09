@@ -43,6 +43,7 @@ import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlinx.android.synthetic.main.colorpicker.*
 import java.io.*
 
 import java.util.ArrayList
@@ -59,6 +60,10 @@ class DeviceScanActivity : ListActivity() {
     private var mScanning: Boolean = false
     private var mHandler: Handler? = null
     private var mActivityName :String? = null
+    private var bleL :BleList? = null
+    private var bleNameList:Array<String>? = null
+    private var bleAddressList:Array<String>? = null
+
 
     public var lastTimeBackPressed = System.currentTimeMillis()
 
@@ -311,15 +316,29 @@ class DeviceScanActivity : ListActivity() {
 
         val device = mLeDeviceListAdapter!!.getDevice(position) ?: return
         val intent = Intent(this, DeviceControlActivity::class.java)
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.name)
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.address)
+        //intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.name)
+       //intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.address)
+        //위의 두줄이 기존 코드 1개의 ble만 넣는 코드
 
+
+
+
+
+        if(v.background == null) {
+            v.setBackgroundColor(R.color.colorBlack)
+
+        }
+        else{
+            v.background = null
+            for( i in bleNameList!!){
+
+                //device
+            }
+        }
 
 
         val filename = "sunnyside.txt"
-        val fileContents = device.name + "/" + device.address
-        this?.openFileOutput(filename, Context.MODE_PRIVATE).use {
-            it?.write(fileContents.toByteArray())
+        val fileContents = device.name + "/" + device.addressBleList
         }
 
 
@@ -332,7 +351,9 @@ class DeviceScanActivity : ListActivity() {
             fileOutputStream.write(data.toByteArray())
         }catch (e: Exception){
             e.printStackTrace()
-        }*/
+\
+        `!}*/
+ */
 
 
 
@@ -340,7 +361,7 @@ class DeviceScanActivity : ListActivity() {
             mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
             mScanning = false
         }
-        startActivity(intent)
+        //startActivity(intent)//DeviceControl로 넘어가는 코드
     }
 
     private fun scanLeDevice(enable: Boolean) {
@@ -358,7 +379,7 @@ class DeviceScanActivity : ListActivity() {
             mScanning = false
             mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
         }
-        invalidateOptionsMenu()
+        nvalidateOptionsMenu()
     }
 
     // Adapter for holding devices found through scanning.

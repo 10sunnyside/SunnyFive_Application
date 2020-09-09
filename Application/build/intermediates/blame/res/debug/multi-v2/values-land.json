@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+            "outputFile": "C:\\Users\\hjh0219\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\e0fec8bece68618988d2624f52160381\\material-1.0.0-rc01\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\hjh0219\\.gradle\\caches\\transforms-2\\files-2.1\\e0fec8bece68618988d2624f52160381\\material-1.0.0-rc01\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
@@ -23,7 +23,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\44eab851dec9fb407c2f231b4fc21b5a\\appcompat-1.0.0\\res\\values-land\\values-land.xml",
+                    "source": "C:\\Users\\hjh0219\\.gradle\\caches\\transforms-2\\files-2.1\\44eab851dec9fb407c2f231b4fc21b5a\\appcompat-1.0.0\\res\\values-land\\values-land.xml",
                     "from": {
                         "startLines": "2,3,4",
                         "startColumns": "4,4,4",

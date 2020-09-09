@@ -21,9 +21,9 @@
 21
 22    <uses-sdk
 23        android:minSdkVersion="21"
-23-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml
+23-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml
 24        android:targetSdkVersion="27" />
-24-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml
+24-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml
 25
 26    <!-- Min/target SDK versions (<uses-sdk>) managed by build.gradle -->
 27
@@ -35,86 +35,86 @@
 33    PackageManager.hasSystemFeature(FEATURE_BLUETOOTH_LE)
 34    -->
 35    <uses-feature
-35-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:31:5-89
+35-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:31:5-89
 36        android:name="android.hardware.bluetooth_le"
-36-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:31:19-63
+36-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:31:19-63
 37        android:required="true" />
-37-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:31:64-87
+37-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:31:64-87
 38
 39    <uses-permission android:name="android.permission.BLUETOOTH" />
-39-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:33:5-67
-39-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:33:22-65
+39-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:33:5-67
+39-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:33:22-65
 40    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-40-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:34:5-73
-40-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:34:22-71
+40-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:34:5-73
+40-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:34:22-71
 41    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-41-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:35:5-79
-41-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:35:22-76
+41-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:35:5-79
+41-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:35:22-76
 42    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-42-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:36:5-81
-42-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:36:22-78
+42-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:36:5-81
+42-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:36:22-78
 43
 44    <application
-44-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:38:5-58:19
+44-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:38:5-58:19
 45        android:appComponentFactory="whateverString"
-45-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:42:9-53
+45-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:42:9-53
 46        android:debuggable="true"
 47        android:icon="@drawable/sunnyside_window"
-47-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:39:9-50
+47-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:39:9-50
 48        android:label="@string/app_name"
-48-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:38:18-50
+48-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:38:18-50
 49        android:testOnly="true"
 50        android:theme="@android:style/Theme.Holo.Light" >
-50-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:40:9-56
+50-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:40:9-56
 51        <activity
-51-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:43:9-45:20
+51-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:43:9-45:20
 52            android:name="com.example.android.bluetoothlegatt.MainActivity"
-52-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:43:19-47
+52-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:43:19-47
 53            android:theme="@style/Theme.AppCompat" >
-53-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:43:48-86
+53-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:43:48-86
 54        </activity>
 55        <activity android:name="com.example.android.bluetoothlegatt.DeviceScanActivity" >
-55-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:46:9-53:20
-55-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:46:19-53
+55-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:46:9-53:20
+55-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:46:19-53
 56            <intent-filter>
-56-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:47:9-52:25
+56-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:47:9-52:25
 57                <action android:name="android.intent.action.MAIN" />
-57-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:48:13-64
-57-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:48:21-62
+57-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:48:13-64
+57-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:48:21-62
 58
 59                <category android:name="android.intent.category.LAUNCHER" />
-59-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:50:13-72
-59-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:50:23-70
+59-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:50:13-72
+59-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:50:23-70
 60            </intent-filter>
 61        </activity>
 62        <activity android:name="com.example.android.bluetoothlegatt.DeviceControlActivity" >
-62-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:54:9-56:20
-62-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:54:19-56
+62-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:54:9-56:20
+62-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:54:19-56
 63        </activity>
 64
 65        <service
-65-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:57:9-77
+65-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:57:9-77
 66            android:name="com.example.android.bluetoothlegatt.BluetoothLeService"
-66-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:57:18-52
+66-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:57:18-52
 67            android:enabled="true" />
-67-->C:\Users\jhhan\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:57:53-75
+67-->C:\Users\hjh0219\Documents\GitHub\SunnyFive_Application\Application\src\main\AndroidManifest.xml:57:53-75
 68        <service
-68-->[androidx.room:room-runtime:2.1.0-alpha06] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\eb6d30ec76c3dcd766f0f0d51702590d\room-runtime-2.1.0-alpha06\AndroidManifest.xml:23:9-25:40
+68-->[androidx.room:room-runtime:2.1.0-alpha06] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\eb6d30ec76c3dcd766f0f0d51702590d\room-runtime-2.1.0-alpha06\AndroidManifest.xml:23:9-25:40
 69            android:name="androidx.room.MultiInstanceInvalidationService"
-69-->[androidx.room:room-runtime:2.1.0-alpha06] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\eb6d30ec76c3dcd766f0f0d51702590d\room-runtime-2.1.0-alpha06\AndroidManifest.xml:24:13-74
+69-->[androidx.room:room-runtime:2.1.0-alpha06] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\eb6d30ec76c3dcd766f0f0d51702590d\room-runtime-2.1.0-alpha06\AndroidManifest.xml:24:13-74
 70            android:exported="false" />
-70-->[androidx.room:room-runtime:2.1.0-alpha06] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\eb6d30ec76c3dcd766f0f0d51702590d\room-runtime-2.1.0-alpha06\AndroidManifest.xml:25:13-37
+70-->[androidx.room:room-runtime:2.1.0-alpha06] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\eb6d30ec76c3dcd766f0f0d51702590d\room-runtime-2.1.0-alpha06\AndroidManifest.xml:25:13-37
 71
 72        <provider
-72-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:23:9-27:43
+72-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:23:9-27:43
 73            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-73-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:24:13-79
+73-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:24:13-79
 74            android:authorities="com.example.android.bluetoothlegatt.lifecycle-process"
-74-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:25:13-69
+74-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:25:13-69
 75            android:exported="false"
-75-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:26:13-37
+75-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:26:13-37
 76            android:multiprocess="true" />
-76-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\jhhan\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:27:13-40
+76-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] C:\Users\hjh0219\.gradle\caches\transforms-2\files-2.1\88be035acd5887aa6e31a4faae9c1dc5\lifecycle-process-2.1.0-alpha04\AndroidManifest.xml:27:13-40
 77    </application>
 78
 79</manifest>

@@ -1,39 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+            "outputFile": "C:\\Users\\hjh0219\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-sw600dp-v13\\values-sw600dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
-                    "from": {
-                        "startLines": "18",
-                        "startColumns": "4",
-                        "startOffsets": "639",
-                        "endLines": "22",
-                        "endColumns": "12",
-                        "endOffsets": "883"
-                    },
-                    "to": {
-                        "startLines": "26",
-                        "startColumns": "4",
-                        "startOffsets": "1544",
-                        "endLines": "30",
-                        "endColumns": "12",
-                        "endOffsets": "1784"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\44eab851dec9fb407c2f231b4fc21b5a\\appcompat-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
-                    "from": {
-                        "startLines": "2,3,4,5,6,7,8,9",
-                        "startColumns": "4,4,4,4,4,4,4,4",
-                        "startOffsets": "55,124,193,263,337,413,472,543",
-                        "endColumns": "68,68,69,73,75,58,70,67",
-                        "endOffsets": "119,188,258,332,408,467,538,606"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\jhhan\\.gradle\\caches\\transforms-2\\files-2.1\\e0fec8bece68618988d2624f52160381\\material-1.0.0-rc01\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "source": "C:\\Users\\hjh0219\\.gradle\\caches\\transforms-2\\files-2.1\\e0fec8bece68618988d2624f52160381\\material-1.0.0-rc01\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,10,11,12",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4",
@@ -52,7 +23,36 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
+                    "source": "C:\\Users\\hjh0219\\Documents\\GitHub\\SunnyFive_Application\\Application\\src\\main\\res\\values-sw600dp\\template-styles.xml",
+                    "from": {
+                        "startLines": "18",
+                        "startColumns": "4",
+                        "startOffsets": "639",
+                        "endLines": "22",
+                        "endColumns": "12",
+                        "endOffsets": "883"
+                    },
+                    "to": {
+                        "startLines": "26",
+                        "startColumns": "4",
+                        "startOffsets": "1544",
+                        "endLines": "30",
+                        "endColumns": "12",
+                        "endOffsets": "1784"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hjh0219\\.gradle\\caches\\transforms-2\\files-2.1\\44eab851dec9fb407c2f231b4fc21b5a\\appcompat-1.0.0\\res\\values-sw600dp-v13\\values-sw600dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4,4,4,4",
+                        "startOffsets": "55,124,193,263,337,413,472,543",
+                        "endColumns": "68,68,69,73,75,58,70,67",
+                        "endOffsets": "119,188,258,332,408,467,538,606"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\hjh0219\\Documents\\GitHub\\SunnyFive_Application\\Application\\src\\main\\res\\values-sw600dp\\template-dimens.xml",
                     "from": {
                         "startLines": "20,21",
                         "startColumns": "4,4",

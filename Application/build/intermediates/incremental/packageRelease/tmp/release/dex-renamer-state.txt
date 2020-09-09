@@ -1,4 +1,0 @@
-#Thu Aug 27 16:57:52 KST 2020
-base.0=/Users/hanjeongho/Downloads/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master3/android-BluetoothLeGatt-master/Application/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
-path.0=classes.dex
-renamed.0=classes.dex

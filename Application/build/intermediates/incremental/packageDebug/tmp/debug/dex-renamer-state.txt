@@ -1,7 +1,7 @@
-#Thu Sep 03 15:50:17 KST 2020
-base.0=C\:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
+#Sat Sep 05 23:28:15 KST 2020
+base.0=C\:\\Users\\hjh0219\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\dex\\debug\\mergeExtDexDebug\\out\\classes.dex
 path.1=classes.dex
 renamed.1=classes2.dex
 path.0=classes.dex
 renamed.0=classes.dex
-base.1=C\:\\Users\\jhhan\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
+base.1=C\:\\Users\\hjh0219\\Documents\\GitHub\\SunnyFive_Application\\Application\\build\\intermediates\\dex\\debug\\mergeProjectDexDebug\\out\\classes.dex
