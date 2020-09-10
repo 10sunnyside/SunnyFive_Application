@@ -1,9 +1,9 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.stack07142:DiscreteSeekBar:1.0.1@aar">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad8eaa3f739f8d3f4d029dccd032ae5a/jetified-DiscreteSeekBar-1.0.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad8eaa3f739f8d3f4d029dccd032ae5a/jetified-DiscreteSeekBar-1.0.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/ad8eaa3f739f8d3f4d029dccd032ae5a/jetified-DiscreteSeekBar-1.0.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f37e5d027d8db0c82dd0420771f40f43/jetified-DiscreteSeekBar-1.0.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f37e5d027d8db0c82dd0420771f40f43/jetified-DiscreteSeekBar-1.0.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f37e5d027d8db0c82dd0420771f40f43/jetified-DiscreteSeekBar-1.0.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

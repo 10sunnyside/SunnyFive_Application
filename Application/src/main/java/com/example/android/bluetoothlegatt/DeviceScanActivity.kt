@@ -35,10 +35,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.ListView
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -47,6 +44,10 @@ import kotlinx.android.synthetic.main.colorpicker.*
 import java.io.*
 
 import java.util.ArrayList
+
+import android.bluetooth.le.BluetoothLeScanner
+import android.bluetooth.le.ScanCallback
+import android.bluetooth.le.ScanResult
 
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
@@ -64,6 +65,9 @@ class DeviceScanActivity : ListActivity() {
     private var bleNameList:Array<String>? = null
     private var bleAddressList:Array<String>? = null
 
+    private var mBluetoothLeScanner: BluetoothLeScanner? = null
+
+
 
     public var lastTimeBackPressed = System.currentTimeMillis()
 
@@ -77,6 +81,16 @@ class DeviceScanActivity : ListActivity() {
             }
             mLeDeviceListAdapter!!.addDevice(device)
             mLeDeviceListAdapter!!.notifyDataSetChanged()
+        }
+    }
+    // Device scan callback for api level 21
+    private val scanCallback: ScanCallback = object : ScanCallback(){
+        override fun onScanResult(callbackType: Int, result: ScanResult) {
+            super.onScanResult(callbackType, result)
+            runOnUiThread {
+                mLeDeviceListAdapter!!.addDevice(result.device)
+                mLeDeviceListAdapter!!.notifyDataSetChanged()
+            }
         }
     }
 
@@ -115,6 +129,10 @@ class DeviceScanActivity : ListActivity() {
         val adapter = BleListAdapter(this)
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)*/
+
+
+
+
 
 
         // Initializes a Bluetooth adapter.  For API level 18 and above, get a reference to
@@ -232,17 +250,19 @@ class DeviceScanActivity : ListActivity() {
         alertDialog.show()
 
 
-
+        mBluetoothLeScanner = BluetoothAdapter.getDefaultAdapter().bluetoothLeScanner
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main, menu)
         if (!mScanning) {
             menu.findItem(R.id.menu_stop).isVisible = false
+            menu.findItem(R.id.menu_multi).isVisible = true
             menu.findItem(R.id.menu_scan).isVisible = true
             menu.findItem(R.id.menu_refresh).actionView = null
         } else {
             menu.findItem(R.id.menu_stop).isVisible = true
+            menu.findItem(R.id.menu_multi).isVisible = true
             menu.findItem(R.id.menu_scan).isVisible = false
             menu.findItem(R.id.menu_refresh).setActionView(
                     R.layout.actionbar_indeterminate_progress)
@@ -316,8 +336,8 @@ class DeviceScanActivity : ListActivity() {
 
         val device = mLeDeviceListAdapter!!.getDevice(position) ?: return
         val intent = Intent(this, DeviceControlActivity::class.java)
-        //intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.name)
-       //intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.address)
+        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.name)
+       intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.address)
         //위의 두줄이 기존 코드 1개의 ble만 넣는 코드
 
 
@@ -330,15 +350,16 @@ class DeviceScanActivity : ListActivity() {
         }
         else{
             v.background = null
-            for( i in bleNameList!!){
 
-                //device
-            }
         }
+        //getListView()
+
 
 
         val filename = "sunnyside.txt"
-        val fileContents = device.name + "/" + device.addressBleList
+        val fileContents = device.name + "/" + device.address
+        this?.openFileOutput(filename, Context.MODE_PRIVATE).use {
+            it?.write(fileContents.toByteArray())
         }
 
 
@@ -351,35 +372,43 @@ class DeviceScanActivity : ListActivity() {
             fileOutputStream.write(data.toByteArray())
         }catch (e: Exception){
             e.printStackTrace()
-\
-        `!}*/
- */
+
+        }*/
+
 
 
 
         if (mScanning) {
-            mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
+            mBluetoothLeScanner!!.stopScan(scanCallback)
+           // mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
             mScanning = false
         }
-        //startActivity(intent)//DeviceControl로 넘어가는 코드
+        // startActivity(intent)//DeviceControl로 넘어가는 코드
     }
+
+
+
+
 
     private fun scanLeDevice(enable: Boolean) {
         if (enable) {
             // Stops scanning after a pre-defined scan period.
             mHandler!!.postDelayed({
                 mScanning = false
-                mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
+                mBluetoothLeScanner!!.stopScan(scanCallback)
+               // mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
                 invalidateOptionsMenu()
             }, SCAN_PERIOD)
 
             mScanning = true
-            mBluetoothAdapter!!.startLeScan(mLeScanCallback)
+            mBluetoothLeScanner!!.startScan(scanCallback)
+           // mBluetoothAdapter!!.startLeScan(mLeScanCallback)
         } else {
             mScanning = false
-            mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
+            mBluetoothLeScanner!!.stopScan(scanCallback)
+           // mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
         }
-        nvalidateOptionsMenu()
+        invalidateOptionsMenu()
     }
 
     // Adapter for holding devices found through scanning.

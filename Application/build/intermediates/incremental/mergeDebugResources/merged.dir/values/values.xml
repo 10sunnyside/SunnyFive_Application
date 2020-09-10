@@ -616,6 +616,7 @@
     <string name="label_state">State:</string>
     <string name="menu_connect">Connect</string>
     <string name="menu_disconnect">Disconnect</string>
+    <string name="menu_multi">Multi</string>
     <string name="menu_scan">Scan</string>
     <string name="menu_stop">Stop</string>
     <string name="mtrl_chip_close_icon_content_description">Remove %1$s</string>

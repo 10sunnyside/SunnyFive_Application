@@ -1325,6 +1325,7 @@ id masked
 id media_actions
 id menu_connect
 id menu_disconnect
+id menu_multi
 id menu_refresh
 id menu_scan
 id menu_stop
@@ -1668,6 +1669,7 @@ string label_device_address
 string label_state
 string menu_connect
 string menu_disconnect
+string menu_multi
 string menu_scan
 string menu_stop
 string mtrl_chip_close_icon_content_description
