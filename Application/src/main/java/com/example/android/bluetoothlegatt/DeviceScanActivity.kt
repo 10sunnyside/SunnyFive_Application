@@ -86,6 +86,11 @@ class DeviceScanActivity : ListActivity() {
     // Device scan callback for api level 21
     private val scanCallback: ScanCallback = object : ScanCallback(){
         override fun onScanResult(callbackType: Int, result: ScanResult) {
+            if(mLeDeviceListAdapter==null){
+                mLeDeviceListAdapter = LeDeviceListAdapter()
+                listAdapter = mLeDeviceListAdapter
+                scanLeDevice(true)
+            }
             super.onScanResult(callbackType, result)
             runOnUiThread {
                 mLeDeviceListAdapter!!.addDevice(result.device)
@@ -199,7 +204,10 @@ class DeviceScanActivity : ListActivity() {
                        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, parts[0])
                        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, parts[1])
                        if (mScanning) {
-                           mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
+                           //mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
+                           mBluetoothLeScanner!!.stopScan(scanCallback)
+
+
                            mScanning = false
                        }
                        startActivity(intent)
@@ -383,7 +391,7 @@ class DeviceScanActivity : ListActivity() {
            // mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
             mScanning = false
         }
-        // startActivity(intent)//DeviceControl로 넘어가는 코드
+         startActivity(intent)//DeviceControl로 넘어가는 코드
     }
 
 
@@ -423,8 +431,10 @@ class DeviceScanActivity : ListActivity() {
 
         fun addDevice(device: BluetoothDevice) {
             if (!mLeDevices.contains(device)) {
-                if(device.name!=null){
-                    mLeDevices.add(device)
+                if(device.name !=null){
+                    if(device.name.contains("SUNNY")) {
+                        mLeDevices.add(device)
+                    }
                 //이름 없는 디바이스들은 리스트에 추가하지 않겠음
                 }
             }

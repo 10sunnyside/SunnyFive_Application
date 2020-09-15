@@ -4424,14 +4424,15 @@ fun latitude(angle:Int) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_connect -> {
-                    val intent = Intent(this, DeviceScanActivity::class.java)
-                    startActivity(intent)
+
 
                 mBluetoothLeService!!.connect(mDeviceAddress)
 
                 return true
             }
             R.id.menu_disconnect -> {
+                val intent = Intent(this, DeviceScanActivity::class.java)
+                startActivity(intent)
                 mBluetoothLeService!!.disconnect()
                 return true
             }
