@@ -2150,21 +2150,25 @@ class DeviceControlActivity : Activity() {
 
                     mRunnable = Runnable {
 
-                    if (mGattCharacteristics != null) {
+                        intensity(i)
+                        Thread.sleep(200)
+                        intensity2(i)
+
+/*                    if (mGattCharacteristics != null) {
                         val characteristic = mGattCharacteristics!![2][0]
                         val charaProp = characteristic.properties
                         if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
                             // If there is an active notification on a characteristic, clear
                             // it first so it doesn't update the data field on the user interface.
-/*                if (mNotifyCharacteristic != null) {
+*//*                if (mNotifyCharacteristic != null) {
                     mBluetoothLeService!!.setCharacteristicNotification(
                             mNotifyCharacteristic, false)
                     mNotifyCharacteristic = null
-                }*/
-                            /*  mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                }*//*
+                            *//*  mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
                                 it, false)
                             mNotifyCharacteristic = null }
-*/
+*//*
 
                             // mBluetoothLeService!!.readCharacteristic(characteristic)
 
@@ -2172,11 +2176,11 @@ class DeviceControlActivity : Activity() {
                             mBluetoothLeService!!.writeCharacteristic(characteristic)
                             Thread.sleep(200)
                         }
-                        /* if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
+                        *//* if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                         mNotifyCharacteristic = characteristic
                         mBluetoothLeService!!.setCharacteristicNotification(
                                 characteristic, true)
-                    }*/
+                    }*//*
                         //  mPage_setting!!.visibility = VISIBLE
                         //  mPage_light!!.visibility = INVISIBLE
 
@@ -2190,15 +2194,15 @@ class DeviceControlActivity : Activity() {
                         if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
                             // If there is an active notification on a characteristic, clear
                             // it first so it doesn't update the data field on the user interface.
-/*                if (mNotifyCharacteristic != null) {
+*//*                if (mNotifyCharacteristic != null) {
                     mBluetoothLeService!!.setCharacteristicNotification(
                             mNotifyCharacteristic, false)
                     mNotifyCharacteristic = null
-                }*/
-                            /*  mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                }*//*
+                            *//*  mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
                                 it, false)
                             mNotifyCharacteristic = null }
-*/
+*//*
 
                             // mBluetoothLeService!!.readCharacteristic(characteristic)
 
@@ -2206,16 +2210,16 @@ class DeviceControlActivity : Activity() {
                             mBluetoothLeService2!!.writeCharacteristic2(characteristic)
 
                         }
-                        /* if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
+                        *//* if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                         mNotifyCharacteristic = characteristic
                         mBluetoothLeService!!.setCharacteristicNotification(
                                 characteristic, true)
-                    }*/
+                    }*//*
                         //  mPage_setting!!.visibility = VISIBLE
                         //  mPage_light!!.visibility = INVISIBLE
 
 
-                    }
+                    }*/
                 }
                     val thread = Thread(mRunnable)
                     thread.start()
@@ -4325,6 +4329,51 @@ fun latitude(angle:Int) {
 }
 
 
+    fun intensity(b:Int) {
+        if (mGattCharacteristics != null) {
+            val characteristic = mGattCharacteristics!![2][0]
+            val charaProp = characteristic.properties
+            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                // If there is an active notification on a characteristic, clear
+                // it first so it doesn't update the data field on the user interface.
+
+
+                // mBluetoothLeService!!.readCharacteristic(characteristic)
+                characteristic.setValue(b, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
+                mBluetoothLeService!!.writeCharacteristic(characteristic)
+            }
+
+            //  mPage_setting!!.visibility = VISIBLE
+            //  mPage_light!!.visibility = INVISIBLE
+            Thread.sleep(100)
+        }
+        //    mPage_setting!!.visibility = VISIBLE
+        //    mPage_light!!.visibility = INVISIBLE
+
+    }
+
+    fun intensity2(b:Int) {
+        if (mGattCharacteristics2 != null) {
+            val characteristic = mGattCharacteristics2!![2][0]
+            val charaProp = characteristic.properties
+            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                // If there is an active notification on a characteristic, clear
+                // it first so it doesn't update the data field on the user interface.
+
+
+                // mBluetoothLeService!!.readCharacteristic(characteristic)
+                characteristic.setValue(b, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
+                mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+            }
+
+            //  mPage_setting!!.visibility = VISIBLE
+            //  mPage_light!!.visibility = INVISIBLE
+            Thread.sleep(100)
+        }
+        //    mPage_setting!!.visibility = VISIBLE
+        //    mPage_light!!.visibility = INVISIBLE
+
+    }
 
     fun display_dashboard() {
         if (mGattCharacteristics != null) {
