@@ -64,6 +64,7 @@ import kotlinx.android.synthetic.main.colorpicker.*
 import kotlinx.android.synthetic.main.custom_dialog.*
 import kotlinx.coroutines.Runnable
 import java.io.File
+import kotlin.collections.ArrayList
 
 
 /**
@@ -95,16 +96,24 @@ class DeviceControlActivity : Activity() {
     private var mDataField: TextView? = null
     private var mDeviceName: String? = null
     private var mDeviceAddress: String? = null
+    private var mDeviceNames = arrayOfNulls<String>(10)
+    private var mDeviceAddresses = arrayOfNulls<String>(10)
+
     private var mGattServicesList: ExpandableListView? = null
+    private var mGattServicesList2: ExpandableListView? = null
     private var mBluetoothLeService: BluetoothLeService? = null
+    private var mBluetoothLeService2: BluetoothLeService? = null
     private var mGattCharacteristics: ArrayList<ArrayList<BluetoothGattCharacteristic>>? = ArrayList()
+    private var mGattCharacteristics2: ArrayList<ArrayList<BluetoothGattCharacteristic>>? = ArrayList()
 
     private var mNotifyCharacteristic: BluetoothGattCharacteristic? = null
 
     private val LIST_NAME = "NAME"
     private val LIST_UUID = "UUID"
     private var gattServiceData: ArrayList<HashMap<String, String>>? = ArrayList()
+    private var gattServiceData2: ArrayList<HashMap<String, String>>? = ArrayList()
     private var gattCharacteristicData: ArrayList<ArrayList<HashMap<String, String>>> = ArrayList()
+    private var gattCharacteristicData2: ArrayList<ArrayList<HashMap<String, String>>> = ArrayList()
     val intentMain = Intent(this, MainActivity::class.java)
 
 
@@ -303,13 +312,34 @@ class DeviceControlActivity : Activity() {
                 finish()
             }
             // Automatically connects to the device upon successful start-up initialization.
-            mBluetoothLeService!!.connect(mDeviceAddress)
+            mBluetoothLeService!!.connect(mDeviceAddresses[0])
+           // mBluetoothLeService!!.connect2(mDeviceAddresses[1])
         }
 
         override fun onServiceDisconnected(componentName: ComponentName) {
             mBluetoothLeService = null
         }
     }
+
+    private val mServiceConnection2 = object : ServiceConnection {
+
+        override fun onServiceConnected(componentName: ComponentName, service: IBinder) {
+            mBluetoothLeService2 = (service as BluetoothLeService.LocalBinder).service
+            if (!mBluetoothLeService2!!.initialize()) {
+                Log.e(TAG, "Unable to initialize Bluetooth")
+                finish()
+            }
+            // Automatically connects to the device upon successful start-up initialization.
+            //mBluetoothLeService!!.connect(mDeviceAddresses[0])
+            mBluetoothLeService2!!.connect2(mDeviceAddresses[1])
+        }
+
+        override fun onServiceDisconnected(componentName: ComponentName) {
+            mBluetoothLeService2 = null
+        }
+    }
+
+
 
     // Handles various events fired by the Service.
     // ACTION_GATT_CONNECTED: connected to a GATT server.
@@ -349,6 +379,9 @@ class DeviceControlActivity : Activity() {
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED == action) {
                 // Show all the supported services and characteristics on the user interface.
                 displayGattServices(mBluetoothLeService!!.supportedGattServices)
+                displayGattServices2(mBluetoothLeService2!!.supportedGattServices2)
+
+
 
             } else if (BluetoothLeService.ACTION_DATA_AVAILABLE == action) {
                 //Toast.makeText(applicationContext,"ACTION_DATA_AVAILABLE",Toast.LENGTH_SHORT).show()
@@ -371,7 +404,7 @@ class DeviceControlActivity : Activity() {
 
                 if(UV.toString()==data2[0]){
                     text_uvb.text = data2[2]
-                    seekBar_vitaminD.progress = data2[2].toInt()
+                         seekBar_vitaminD.progress = data2[2].toInt()
 
                 }
 
@@ -449,6 +482,9 @@ class DeviceControlActivity : Activity() {
         }
     }
 
+
+
+
     // If a given GATT characteristic is selected, check for supported features.  This sample
     // demonstrates 'Read' and 'Notify' features.  See
     // http://d.android.com/reference/android/bluetooth/BluetoothGatt.html for the complete
@@ -468,14 +504,23 @@ class DeviceControlActivity : Activity() {
                 mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
                         it, false)
                     mNotifyCharacteristic = null }
+                mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification2(
+                        it, false)
+                    mNotifyCharacteristic = null }
 
                 mBluetoothLeService!!.readCharacteristic(characteristic)
                 characteristic.setValue("TT")
                 mBluetoothLeService!!.writeCharacteristic(characteristic)
+                Thread.sleep(100)
+                mBluetoothLeService!!.readCharacteristic2(characteristic)
+                characteristic.setValue("TT")
+                mBluetoothLeService!!.writeCharacteristic2(characteristic)
             }
             if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                 mNotifyCharacteristic = characteristic
                 mBluetoothLeService!!.setCharacteristicNotification(
+                        characteristic, true)
+                mBluetoothLeService!!.setCharacteristicNotification2(
                         characteristic, true)
             }
             return@OnChildClickListener true
@@ -493,6 +538,8 @@ class DeviceControlActivity : Activity() {
         setContentView(R.layout.gatt_services_characteristics)
 
 
+       // mDeviceNames = arrayOfNulls<String>(10)
+      //  mDeviceAddresses = arrayOfNulls<String>(10)
 
 
 
@@ -523,8 +570,19 @@ class DeviceControlActivity : Activity() {
         this.mPage_view!!.visibility = INVISIBLE
         this.mPage_samsungcnt!!.visibility = INVISIBLE
         val intent = intent
-        mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME)
-        mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS)
+
+        //mDeviceName = intent.getStringExtra(EXTRAS_DEVICE_NAME)
+        //mDeviceAddress = intent.getStringExtra(EXTRAS_DEVICE_ADDRESS)
+        // 1개만 연결할 때 쓰는 코드
+
+        for(i in DEVICE_NAMES.indices){
+            //if()
+            this!!.mDeviceNames!![i] = intent.getStringExtra(DEVICE_NAMES[i])
+            }
+        for(i in DEVICE_ADDRESSES.indices){
+            this!!.mDeviceAddresses!![i] = intent.getStringExtra(DEVICE_ADDRESSES[i])
+        } //여기까지
+
 
         // Sets up UI references.
         (findViewById<View>(R.id.device_address) as TextView).text = mDeviceAddress
@@ -539,8 +597,11 @@ class DeviceControlActivity : Activity() {
         //actionBar!!.setBackgroundDrawable(ColorDrawable(Color.rgb(255,221,217)))
 
         //메뉴바 색상 변경
+
         val gattServiceIntent = Intent(this, BluetoothLeService::class.java)
+        val gattServiceIntent2 = Intent(this, BluetoothLeService::class.java)
         bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE)
+        bindService(gattServiceIntent2, mServiceConnection2, Context.BIND_AUTO_CREATE)
 
         mRandom = Random()
         mHandler = Handler()
@@ -662,6 +723,8 @@ class DeviceControlActivity : Activity() {
                     // mBluetoothLeService!!.readCharacteristic(characteristic)
                     characteristic.setValue(0, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
                     mBluetoothLeService!!.writeCharacteristic(characteristic)
+                    mBluetoothLeService!!.writeCharacteristic2(characteristic)
+
                 }
                 /*if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                     mNotifyCharacteristic = characteristic
@@ -695,6 +758,8 @@ class DeviceControlActivity : Activity() {
                     // mBluetoothLeService!!.readCharacteristic(characteristic)
                     characteristic.setValue(0, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
                     mBluetoothLeService!!.writeCharacteristic(characteristic)
+                    mBluetoothLeService!!.writeCharacteristic2(characteristic)
+
                 }
                 /*if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                     mNotifyCharacteristic = characteristic
@@ -1136,6 +1201,13 @@ class DeviceControlActivity : Activity() {
                                         mNotifyCharacteristic = null
                                     }
                                     mBluetoothLeService!!.readCharacteristic(characteristic)
+                                    Thread.sleep(100)
+                                    mNotifyCharacteristic?.let {
+                                        mBluetoothLeService!!.setCharacteristicNotification2(
+                                                it, false)
+                                        mNotifyCharacteristic = null
+                                    }
+                                    mBluetoothLeService!!.readCharacteristic2(characteristic)
                                     Thread.sleep(100)
                                 }
                             }
@@ -2075,6 +2147,9 @@ class DeviceControlActivity : Activity() {
                 text_brightness.text = "$i"
 
                 if(b) {  //seekbar에 의하여 변경되었을때만 반영
+
+                    mRunnable = Runnable {
+
                     if (mGattCharacteristics != null) {
                         val characteristic = mGattCharacteristics!![2][0]
                         val charaProp = characteristic.properties
@@ -2095,6 +2170,7 @@ class DeviceControlActivity : Activity() {
 
                             characteristic.setValue(i, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
                             mBluetoothLeService!!.writeCharacteristic(characteristic)
+                            Thread.sleep(200)
                         }
                         /* if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                         mNotifyCharacteristic = characteristic
@@ -2104,11 +2180,45 @@ class DeviceControlActivity : Activity() {
                         //  mPage_setting!!.visibility = VISIBLE
                         //  mPage_light!!.visibility = INVISIBLE
 
-                        return
+                        // return
                     }
                     //    mPage_setting!!.visibility = VISIBLE
                     //    mPage_light!!.visibility = INVISIBLE
+                    if (mGattCharacteristics2 != null) {
+                        val characteristic = mGattCharacteristics2!![2][0]
+                        val charaProp = characteristic.properties
+                        if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                            // If there is an active notification on a characteristic, clear
+                            // it first so it doesn't update the data field on the user interface.
+/*                if (mNotifyCharacteristic != null) {
+                    mBluetoothLeService!!.setCharacteristicNotification(
+                            mNotifyCharacteristic, false)
+                    mNotifyCharacteristic = null
+                }*/
+                            /*  mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                                it, false)
+                            mNotifyCharacteristic = null }
+*/
 
+                            // mBluetoothLeService!!.readCharacteristic(characteristic)
+
+                            characteristic.setValue(i, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
+                            mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+
+                        }
+                        /* if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
+                        mNotifyCharacteristic = characteristic
+                        mBluetoothLeService!!.setCharacteristicNotification(
+                                characteristic, true)
+                    }*/
+                        //  mPage_setting!!.visibility = VISIBLE
+                        //  mPage_light!!.visibility = INVISIBLE
+
+
+                    }
+                }
+                    val thread = Thread(mRunnable)
+                    thread.start()
                 }
             }
 
@@ -2274,6 +2384,7 @@ class DeviceControlActivity : Activity() {
                 if(b) {  //seekbar에 의하여 변경되었을때만 반영
 
                     mRunnable = Runnable {
+
 
                         // mHandler.post(mRunnable)
                         val thread = Thread(mRunnable)
@@ -3905,6 +4016,8 @@ class DeviceControlActivity : Activity() {
                                 // mBluetoothLeService!!.readCharacteristic(characteristic)
                                 characteristic.setValue(localTimeInt, BluetoothGattCharacteristic.FORMAT_UINT32, 0)
                                 mBluetoothLeService!!.writeCharacteristic(characteristic)
+                                mBluetoothLeService!!.writeCharacteristic2(characteristic)
+
                             }
 
 /*                mPage_setting!!.visibility = VISIBLE
@@ -3997,8 +4110,15 @@ class DeviceControlActivity : Activity() {
         super.onResume()
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter())
         if (mBluetoothLeService != null) {
-            val result = mBluetoothLeService!!.connect(mDeviceAddress)
+            val result = mBluetoothLeService!!.connect(mDeviceAddresses[0])
             Log.d(TAG, "Connect request result=$result")
+
+            Toast.makeText(applicationContext,"connected!!!", Toast.LENGTH_SHORT).show()
+        }
+        Thread.sleep(100)
+        if (mBluetoothLeService2 != null) {
+            val result2 = mBluetoothLeService2!!.connect2(mDeviceAddress)
+            Log.d(TAG, "Connect request result=$result2")
 
             Toast.makeText(applicationContext,"connected!!!", Toast.LENGTH_SHORT).show()
         }
@@ -4013,6 +4133,8 @@ class DeviceControlActivity : Activity() {
         super.onDestroy()
         unbindService(mServiceConnection)
         mBluetoothLeService = null
+        unbindService(mServiceConnection2)
+        mBluetoothLeService2 = null
     }
 
     override fun onBackPressed() {
@@ -4037,6 +4159,7 @@ class DeviceControlActivity : Activity() {
 
 
             mBluetoothLeService!!.disconnect()
+            mBluetoothLeService2!!.disconnect2()
             val intent = Intent(this, DeviceScanActivity::class.java)
             intent.putExtra(DeviceScanActivity.EXTRAS_ACTIVITY_NAME, "DeviceControlActivity")
             startActivity(intent)
@@ -4052,6 +4175,7 @@ class DeviceControlActivity : Activity() {
 
 
             mBluetoothLeService!!.disconnect()
+            mBluetoothLeService2!!.disconnect2()
             val intent = Intent(this, DeviceScanActivity::class.java)
             intent.putExtra(DeviceScanActivity.EXTRAS_ACTIVITY_NAME, "DeviceControlActivity")
             startActivity(intent)
@@ -4427,12 +4551,16 @@ fun latitude(angle:Int) {
                     val intent = Intent(this, DeviceScanActivity::class.java)
                     startActivity(intent)
 
-                mBluetoothLeService!!.connect(mDeviceAddress)
+                mBluetoothLeService!!.connect(mDeviceAddresses[0])
+                Thread.sleep(100)
+                mBluetoothLeService2!!.connect2(mDeviceAddresses[1])
 
                 return true
             }
             R.id.menu_disconnect -> {
                 mBluetoothLeService!!.disconnect()
+                mBluetoothLeService2!!.disconnect2()
+
                 return true
             }
             android.R.id.home -> {
@@ -4445,6 +4573,7 @@ fun latitude(angle:Int) {
 
     private fun updateConnectionState(resourceId: Int) {
         runOnUiThread { mConnectionState!!.setText(resourceId) }
+
     }
 
     private fun displayData(data: String?) {
@@ -4575,12 +4704,77 @@ fun latitude(angle:Int) {
         //samsungcnt()
     }
 
+    private fun displayGattServices2(gattServices: List<BluetoothGattService>?) {
+        if (gattServices == null) return
+        var uuid: String? = null
+        val unknownServiceString = resources.getString(R.string.unknown_service)
+        val unknownCharaString = resources.getString(R.string.unknown_characteristic)
+        // val gattServiceData = ArrayList<HashMap<String, String>>()
+        // val gattCharacteristicData = ArrayList<ArrayList<HashMap<String, String>>>()
+        mGattCharacteristics2 = ArrayList()
+
+        // Loops through available GATT Services.
+        for (gattService in gattServices) {
+            val currentServiceData = HashMap<String, String>()
+            uuid = gattService.uuid.toString()
+            currentServiceData[LIST_NAME] = SampleGattAttributes.lookup(uuid, unknownServiceString)
+            currentServiceData[LIST_UUID] = uuid
+            gattServiceData2?.add(currentServiceData)
+
+            val gattCharacteristicGroupData = ArrayList<HashMap<String, String>>()
+            val gattCharacteristics = gattService.characteristics
+            val charas = ArrayList<BluetoothGattCharacteristic>()
+
+            // Loops through available Characteristics.
+            for (gattCharacteristic in gattCharacteristics) {
+                charas.add(gattCharacteristic)
+                val currentCharaData = HashMap<String, String>()
+                uuid = gattCharacteristic.uuid.toString()
+                currentCharaData[LIST_NAME] = SampleGattAttributes.lookup(uuid, unknownCharaString)
+                currentCharaData[LIST_UUID] = uuid
+                gattCharacteristicGroupData.add(currentCharaData)
+            }
+            mGattCharacteristics2!!.add(charas)
+            gattCharacteristicData2?.add(gattCharacteristicGroupData)
+        }
+
+        val gattServiceAdapter = SimpleExpandableListAdapter(
+                this,
+                gattServiceData2,
+                android.R.layout.simple_expandable_list_item_2,
+                arrayOf(LIST_NAME, LIST_UUID),
+                intArrayOf(android.R.id.text1, android.R.id.text2),
+                gattCharacteristicData,
+                android.R.layout.simple_expandable_list_item_2,
+                arrayOf(LIST_NAME, LIST_UUID),
+                intArrayOf(android.R.id.text1, android.R.id.text2)
+        )
+       // mGattServicesList2!!.setAdapter(gattServiceAdapter)
+
+
+        mRunnable = Runnable {
+            writeCurTime()
+            Thread.sleep(100)
+            display_dashboard()
+
+        }
+
+        val thread = Thread(mRunnable)
+        thread.start()
+        mPage_main!!.visibility = VISIBLE
+        //samsungcnt()
+    }
+
     companion object {
         var mConnected: Boolean = false
         private val TAG = DeviceControlActivity::class.java!!.getSimpleName()
 
-        val EXTRAS_DEVICE_NAME = "DEVICE_NAME"
-        val EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS"
+        //val EXTRAS_DEVICE_NAME = "DEVICE_NAME"
+        //val EXTRAS_DEVICE_ADDRESS = "DEVICE_ADDRESS"
+        // 1개만 선택할 때 쓰던 코드
+
+        val DEVICE_NAMES : Array<String> = arrayOf("0","1","2","3","4","5","6","7","8","9")
+         val DEVICE_ADDRESSES : Array<String> = arrayOf("0","1","2","3","4","5","6","7","8","9")
 
         val LIGHT = UUID.fromString(SampleGattAttributes.LIGHT)
         val INTENSITY = UUID.fromString(SampleGattAttributes.INTENSITY)

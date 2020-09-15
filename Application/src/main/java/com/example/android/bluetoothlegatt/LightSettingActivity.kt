@@ -76,8 +76,8 @@ class LightSettingActivity : AppCompatActivity(){
         setContentView(R.layout.light_setting)
 
         val intent = intent
-        mDeviceName = intent.getStringExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME)
-        mDeviceAddress = intent.getStringExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS)
+      //  mDeviceName = intent.getStringExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME)
+      //  mDeviceAddress = intent.getStringExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS)
 
         val gattServiceIntent = Intent(this, BluetoothLeService::class.java)
         bindService(gattServiceIntent, mServiceConnection, Context.BIND_AUTO_CREATE)

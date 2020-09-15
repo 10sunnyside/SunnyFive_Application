@@ -48,6 +48,7 @@ import java.util.ArrayList
 import android.bluetooth.le.BluetoothLeScanner
 import android.bluetooth.le.ScanCallback
 import android.bluetooth.le.ScanResult
+import kotlinx.android.synthetic.main.listitem_device.view.*
 
 /**
  * Activity for scanning and displaying available Bluetooth LE devices.
@@ -67,7 +68,7 @@ class DeviceScanActivity : ListActivity() {
 
     private var mBluetoothLeScanner: BluetoothLeScanner? = null
 
-
+    public var sunnyCount = 0
 
     public var lastTimeBackPressed = System.currentTimeMillis()
 
@@ -116,7 +117,7 @@ class DeviceScanActivity : ListActivity() {
 
 
 
-
+        sunnyCount=0
         val intent = intent
         mActivityName = intent.getStringExtra(EXTRAS_ACTIVITY_NAME)
 
@@ -196,8 +197,9 @@ class DeviceScanActivity : ListActivity() {
                    print(parts)
                    try {
                        val intent = Intent(this, DeviceControlActivity::class.java)
-                       intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, parts[0])
-                       intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, parts[1])
+                      // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, parts[0])
+                      // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, parts[1])
+                       // 1개만 연결하는 코드
                        if (mScanning) {
                            mBluetoothAdapter!!.stopLeScan(mLeScanCallback)
                            mScanning = false
@@ -277,6 +279,27 @@ class DeviceScanActivity : ListActivity() {
                 scanLeDevice(true)
             }
             R.id.menu_stop -> scanLeDevice(false)
+            R.id.menu_multi -> {
+                sunnyCount =0
+                val intent = Intent(this, DeviceControlActivity::class.java)
+                val count = this.listView.childCount
+
+                for(i in 0 until count-1){
+
+                    if(this.listView.getChildAt(i).background != null) {
+
+                        val name = this.listView.getChildAt(i).device_name.text
+                        val address = this.listView.getChildAt(i).device_address.text
+                        intent.putExtra(DeviceControlActivity.DEVICE_NAMES[sunnyCount], name)
+                        intent.putExtra(DeviceControlActivity.DEVICE_ADDRESSES[sunnyCount], address)
+                        sunnyCount++
+                    }
+
+                }
+                if(sunnyCount>0)
+                 startActivity(intent)//DeviceControl로 넘어가는 코드
+
+            }
         }
         return true
     }
@@ -336,8 +359,8 @@ class DeviceScanActivity : ListActivity() {
 
         val device = mLeDeviceListAdapter!!.getDevice(position) ?: return
         val intent = Intent(this, DeviceControlActivity::class.java)
-        intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.name)
-       intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.address)
+       // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_NAME, device.name)
+      // intent.putExtra(DeviceControlActivity.EXTRAS_DEVICE_ADDRESS, device.address)
         //위의 두줄이 기존 코드 1개의 ble만 넣는 코드
 
 
