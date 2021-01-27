@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-v18/values-v18.xml",
+            "map": [
+                {
+                    "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/values-v18/values-v18.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "48",
+                        "endOffsets": "99"
+                    }
+                }
+            ]
+        }
+    ]
+}

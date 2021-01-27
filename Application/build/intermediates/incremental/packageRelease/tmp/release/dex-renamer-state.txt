@@ -1,0 +1,4 @@
+#Wed Jan 27 17:28:06 KST 2021
+base.0=/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/dex/release/mergeDexRelease/out/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

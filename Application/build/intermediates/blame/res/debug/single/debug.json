@@ -136,20 +136,20 @@
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable/abc_cab_background_internal_bg.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable_ic_noun_weather_2733282.xml.flat",
         "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/template/res/drawable/ic_noun_weather_2733282.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_ic_menu_paste_mtrl_am_alpha.png.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-hdpi-v4/abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/color_mtrl_tabs_icon_color_selector_colored.xml.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/e0fec8bece68618988d2624f52160381/material-1.0.0-rc01/res/color/mtrl_tabs_icon_color_selector_colored.xml"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xhdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xhdpi-v4/abc_textfield_search_default_mtrl_alpha.9.png"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/menu_main.xml.flat",
@@ -216,12 +216,12 @@
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_list_pressed_holo_light.9.png"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/9793e08c3f8c184fb77b6f0f06fb04a5/core-1.0.0/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-mdpi-v4_abc_textfield_search_default_mtrl_alpha.9.png.flat",
@@ -256,36 +256,36 @@
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable/abc_item_background_holo_light.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/color/abc_background_cache_hint_selector_material_dark.xml"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/layout_abc_list_menu_item_layout.xml.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/layout/abc_list_menu_item_layout.xml"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/color_abc_background_cache_hint_selector_material_dark.xml.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/color/abc_background_cache_hint_selector_material_dark.xml"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/animator-v21_design_appbar_state_list_animator.xml.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/e0fec8bece68618988d2624f52160381/material-1.0.0-rc01/res/animator-v21/design_appbar_state_list_animator.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/layout_abc_activity_chooser_view_list_item.xml.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-hdpi-v4_abc_list_pressed_holo_dark.9.png.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-hdpi-v4/abc_list_pressed_holo_dark.9.png"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/anim_abc_slide_in_top.xml.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/anim/abc_slide_in_top.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/color/switch_thumb_material_dark.xml"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable_bg_vd.PNG.flat",
         "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/template/res/drawable/bg_vd.PNG"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/color_switch_thumb_material_dark.xml.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/color/switch_thumb_material_dark.xml"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_commit_search_api_mtrl_alpha.png.flat",
@@ -304,12 +304,12 @@
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/e0fec8bece68618988d2624f52160381/material-1.0.0-rc01/res/animator/mtrl_btn_unelevated_state_list_anim.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/layout_gatt_services_characteristics.xml.flat",
-        "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/layout/gatt_services_characteristics.xml"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/9793e08c3f8c184fb77b6f0f06fb04a5/core-1.0.0/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/layout_gatt_services_characteristics.xml.flat",
+        "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/res/layout/gatt_services_characteristics.xml"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable_ic_noun_night_2325388.xml.flat",
@@ -324,12 +324,12 @@
         "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/e0fec8bece68618988d2624f52160381/material-1.0.0-rc01/res/color/mtrl_bottom_nav_item_tint.xml"
     },
     {
-        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
-        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
-    },
-    {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable_seekbar_r_progress.xml.flat",
         "source": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/template/res/drawable/seekbar_r_progress.xml"
+    },
+    {
+        "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_list_longpressed_holo.9.png.flat",
+        "source": "/Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/44eab851dec9fb407c2f231b4fc21b5a/appcompat-1.0.0/res/drawable-xxhdpi-v4/abc_list_longpressed_holo.9.png"
     },
     {
         "merged": "/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_abc_ic_menu_cut_mtrl_alpha.png.flat",
