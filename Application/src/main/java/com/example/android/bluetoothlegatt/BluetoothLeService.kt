@@ -238,6 +238,7 @@ class BluetoothLeService : Service() {
         // such that resources are cleaned up properly.  In this particular example, close() is
         // invoked when the UI is disconnected from the Service.
         close()
+        close2()
         return super.onUnbind(intent)
     }
 
@@ -435,11 +436,13 @@ class BluetoothLeService : Service() {
                 return
             }
             if (mBluetoothGatt2!!.writeCharacteristic(characteristic)) {                       //Request the BluetoothGatt to do the Write
-                Log.i(TAG, "****************WRITE CHARACTERISTIC SUCCESSFUL**$characteristic")//The request was accepted, this does not mean the write completed
+                Log.i(TAG, "****************WRITE CHARACTERISTIC SUCCESSFUL**$characteristic -- ${mBluetoothGatt2!!.device}")//The request was accepted, this does not mean the write completed
 /*  if(characteristic.getUuid().toString().equalsIgnoreCase(getString(R.string.char_uuid_missed_connection))){
 }*/
             } else {
+
                 Log.i(TAG, "writeCharacteristic failed")                                   //Write request was not accepted by the BluetoothGatt
+
             }
         } catch (e: Exception) {
             Log.i(TAG, e.message)

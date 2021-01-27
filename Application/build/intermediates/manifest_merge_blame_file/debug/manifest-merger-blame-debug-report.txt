@@ -99,22 +99,22 @@
 67            android:enabled="true" />
 67-->/Users/hanjeongho/Documents/GitHub/SunnyFive_Application/Application/src/main/AndroidManifest.xml:57:53-75
 68        <service
-68-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/eb6d30ec76c3dcd766f0f0d51702590d/room-runtime-2.1.0-alpha06/AndroidManifest.xml:23:9-25:40
+68-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/d73bd2abeeaa04e90f6d81e49d9bff7e/room-runtime-2.1.0-alpha06/AndroidManifest.xml:23:9-25:40
 69            android:name="androidx.room.MultiInstanceInvalidationService"
-69-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/eb6d30ec76c3dcd766f0f0d51702590d/room-runtime-2.1.0-alpha06/AndroidManifest.xml:24:13-74
+69-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/d73bd2abeeaa04e90f6d81e49d9bff7e/room-runtime-2.1.0-alpha06/AndroidManifest.xml:24:13-74
 70            android:exported="false" />
-70-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/eb6d30ec76c3dcd766f0f0d51702590d/room-runtime-2.1.0-alpha06/AndroidManifest.xml:25:13-37
+70-->[androidx.room:room-runtime:2.1.0-alpha06] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/d73bd2abeeaa04e90f6d81e49d9bff7e/room-runtime-2.1.0-alpha06/AndroidManifest.xml:25:13-37
 71
 72        <provider
-72-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/88be035acd5887aa6e31a4faae9c1dc5/lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:23:9-27:43
+72-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/594ff939f88e74c24d4d4faae4b8f208/jetified-lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:23:9-27:43
 73            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
-73-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/88be035acd5887aa6e31a4faae9c1dc5/lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:24:13-79
+73-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/594ff939f88e74c24d4d4faae4b8f208/jetified-lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:24:13-79
 74            android:authorities="com.example.android.bluetoothlegatt.lifecycle-process"
-74-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/88be035acd5887aa6e31a4faae9c1dc5/lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:25:13-69
+74-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/594ff939f88e74c24d4d4faae4b8f208/jetified-lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:25:13-69
 75            android:exported="false"
-75-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/88be035acd5887aa6e31a4faae9c1dc5/lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:26:13-37
+75-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/594ff939f88e74c24d4d4faae4b8f208/jetified-lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:26:13-37
 76            android:multiprocess="true" />
-76-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/88be035acd5887aa6e31a4faae9c1dc5/lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:27:13-40
+76-->[androidx.lifecycle:lifecycle-process:2.1.0-alpha04] /Users/hanjeongho/.gradle/caches/transforms-2/files-2.1/594ff939f88e74c24d4d4faae4b8f208/jetified-lifecycle-process-2.1.0-alpha04/AndroidManifest.xml:27:13-40
 77    </application>
 78
 79</manifest>

@@ -284,7 +284,7 @@ class DeviceScanActivity : ListActivity() {
                 val intent = Intent(this, DeviceControlActivity::class.java)
                 val count = this.listView.childCount
 
-                for(i in 0 until count-1){
+                for(i in 0 until count){
 
                     if(this.listView.getChildAt(i).background != null) {
 
@@ -447,7 +447,9 @@ class DeviceScanActivity : ListActivity() {
         fun addDevice(device: BluetoothDevice) {
             if (!mLeDevices.contains(device)) {
                 if(device.name!=null){
-                    mLeDevices.add(device)
+                    if(device.name.contains("SUNNY")) {
+                        mLeDevices.add(device)
+                    }
                 //이름 없는 디바이스들은 리스트에 추가하지 않겠음
                 }
             }

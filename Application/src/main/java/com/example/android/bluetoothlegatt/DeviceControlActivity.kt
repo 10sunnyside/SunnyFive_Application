@@ -57,6 +57,7 @@ import java.time.LocalTime
 import java.util.*
 import com.airbnb.lottie.LottieAnimationView
 import com.airbnb.lottie.LottieDrawable
+import com.example.android.bluetoothlegatt.SampleGattAttributes.INTENSITY
 import com.example.android.bluetoothlegatt.SampleGattAttributes.LATITUDE
 import io.github.stack07142.discreteseekbar.DiscreteSeekBar
 import kotlinx.android.synthetic.*
@@ -65,6 +66,7 @@ import kotlinx.android.synthetic.main.custom_dialog.*
 import kotlinx.coroutines.Runnable
 import java.io.File
 import kotlin.collections.ArrayList
+import kotlin.concurrent.thread
 
 
 /**
@@ -107,6 +109,7 @@ class DeviceControlActivity : Activity() {
     private var mGattCharacteristics2: ArrayList<ArrayList<BluetoothGattCharacteristic>>? = ArrayList()
 
     private var mNotifyCharacteristic: BluetoothGattCharacteristic? = null
+    private var mNotifyCharacteristic2: BluetoothGattCharacteristic? = null
 
     private val LIST_NAME = "NAME"
     private val LIST_UUID = "UUID"
@@ -313,6 +316,8 @@ class DeviceControlActivity : Activity() {
             }
             // Automatically connects to the device upon successful start-up initialization.
             mBluetoothLeService!!.connect(mDeviceAddresses[0])
+
+            //mBluetoothLeService2!!.connect2(mDeviceAddresses[1])
            // mBluetoothLeService!!.connect2(mDeviceAddresses[1])
         }
 
@@ -379,7 +384,8 @@ class DeviceControlActivity : Activity() {
             } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED == action) {
                 // Show all the supported services and characteristics on the user interface.
                 displayGattServices(mBluetoothLeService!!.supportedGattServices)
-                displayGattServices2(mBluetoothLeService2!!.supportedGattServices2)
+                //displayGattServices(mBluetoothLeService!!.supportedGattServices2)
+                //displayGattServices2(mBluetoothLeService2!!.supportedGattServices2)
 
 
 
@@ -483,6 +489,39 @@ class DeviceControlActivity : Activity() {
     }
 
 
+    private val mGattUpdateReceiver2 = object : BroadcastReceiver() {
+        override fun onReceive(context: Context, intent: Intent) {
+            val action = intent.action
+            if (BluetoothLeService.ACTION_GATT_CONNECTED == action) {
+
+
+                invalidateOptionsMenu()
+
+                //   startActivity(intentMain)
+
+
+
+
+            } else if (BluetoothLeService.ACTION_GATT_DISCONNECTED == action) {
+
+
+            } else if (BluetoothLeService.ACTION_GATT_SERVICES_DISCOVERED == action) {
+                // Show all the supported services and characteristics on the user interface.
+
+                //displayGattServices(mBluetoothLeService!!.supportedGattServices2)
+                displayGattServices2(mBluetoothLeService2!!.supportedGattServices2)
+
+
+
+            } else if (BluetoothLeService.ACTION_DATA_AVAILABLE == action) {
+                //Toast.makeText(applicationContext,"ACTION_DATA_AVAILABLE",Toast.LENGTH_SHORT).show()
+                //val parts = stringBuilder.toString().split(delimiter)
+
+            }
+        }
+    }
+
+
 
 
     // If a given GATT characteristic is selected, check for supported features.  This sample
@@ -504,23 +543,24 @@ class DeviceControlActivity : Activity() {
                 mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
                         it, false)
                     mNotifyCharacteristic = null }
-                mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification2(
+                mNotifyCharacteristic2?.let { mBluetoothLeService2!!.setCharacteristicNotification2(
                         it, false)
-                    mNotifyCharacteristic = null }
+                    mNotifyCharacteristic2 = null }
 
                 mBluetoothLeService!!.readCharacteristic(characteristic)
                 characteristic.setValue("TT")
                 mBluetoothLeService!!.writeCharacteristic(characteristic)
                 Thread.sleep(100)
-                mBluetoothLeService!!.readCharacteristic2(characteristic)
+                mBluetoothLeService2!!.readCharacteristic2(characteristic)
                 characteristic.setValue("TT")
-                mBluetoothLeService!!.writeCharacteristic2(characteristic)
+                mBluetoothLeService2!!.writeCharacteristic2(characteristic)
             }
             if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                 mNotifyCharacteristic = characteristic
                 mBluetoothLeService!!.setCharacteristicNotification(
                         characteristic, true)
-                mBluetoothLeService!!.setCharacteristicNotification2(
+                mNotifyCharacteristic2 = characteristic
+                mBluetoothLeService2!!.setCharacteristicNotification2(
                         characteristic, true)
             }
             return@OnChildClickListener true
@@ -686,6 +726,7 @@ class DeviceControlActivity : Activity() {
                 mRunnable = Runnable {
                     testerVersionOff()
                     display_dashboard()
+                    display_dashboard2()
 
                 }
                 testStatus = 0
@@ -1202,12 +1243,12 @@ class DeviceControlActivity : Activity() {
                                     }
                                     mBluetoothLeService!!.readCharacteristic(characteristic)
                                     Thread.sleep(100)
-                                    mNotifyCharacteristic?.let {
-                                        mBluetoothLeService!!.setCharacteristicNotification2(
+                                    mNotifyCharacteristic2?.let {
+                                        mBluetoothLeService2!!.setCharacteristicNotification2(
                                                 it, false)
-                                        mNotifyCharacteristic = null
+                                        mNotifyCharacteristic2 = null
                                     }
-                                    mBluetoothLeService!!.readCharacteristic2(characteristic)
+                                    mBluetoothLeService2!!.readCharacteristic2(characteristic)
                                     Thread.sleep(100)
                                 }
                             }
@@ -2245,37 +2286,46 @@ class DeviceControlActivity : Activity() {
                 text_temperature.text = "$i"+"00 K"
 
                 if(b) {
-                    if (mGattCharacteristics != null) {
+                  /*  if (mGattCharacteristics != null) {
                         val characteristic = mGattCharacteristics!![2][1]
                         val charaProp = characteristic.properties
                         if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
                             // If there is an active notification on a characteristic, clear
                             // it first so it doesn't update the data field on the user interface.
-/*                if (mNotifyCharacteristic != null) {
+*//*                if (mNotifyCharacteristic != null) {
                     mBluetoothLeService!!.setCharacteristicNotification(
                             mNotifyCharacteristic, false)
                     mNotifyCharacteristic = null
-                }*/
-                            /*        mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                }*//*
+                            *//*        mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
                                 it, false)
-                            mNotifyCharacteristic = null }*/
+                            mNotifyCharacteristic = null }*//*
 
                             // mBluetoothLeService!!.readCharacteristic(characteristic)
                             characteristic.setValue(i, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
                             mBluetoothLeService!!.writeCharacteristic(characteristic)
                         }
-/*                    if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
+*//*                    if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
                         mNotifyCharacteristic = characteristic
                         mBluetoothLeService!!.setCharacteristicNotification(
                                 characteristic, true)
-                    }*/
+                    }*//*
                         //mPage_setting!!.visibility = VISIBLE
                         //mPage_light!!.visibility = INVISIBLE
                         return
                     }
                     //    mPage_setting!!.visibility = VISIBLE
                     //    mPage_light!!.visibility = INVISIBLE
+*/
 
+                    mRunnable = Runnable {
+
+                        writeTemperature(i)
+                        Thread.sleep(200)
+                        writeTemperature2(i)
+                    }
+                    val thread = Thread(mRunnable)
+                    thread.start()
 
                 }
 
@@ -3997,6 +4047,87 @@ class DeviceControlActivity : Activity() {
 
         var localTime2 = Integer.parseInt(localTime)
 
+
+        mRunnable = Runnable {
+
+            writeTime(localTimeInt)
+
+
+        }
+        val thread = Thread(mRunnable)
+        thread.start()
+
+
+    }
+
+    fun writeCurTime2(){
+        val format1 = SimpleDateFormat("HH")
+        val format2 = SimpleDateFormat("mm")
+        val format3 = SimpleDateFormat("ss")
+
+        val tz = TimeZone.getTimeZone("Asia/Seoul")
+
+        val gc = GregorianCalendar(tz)
+
+/*
+            var year = gc.get(GregorianCalendar.YEAR).toString()
+
+            var month = gc.get(GregorianCalendar.MONTH).toString()
+
+            var day = gc.get(GregorianCalendar.DATE).toString()
+
+            var hour= gc.get(GregorianCalendar.HOUR).toString()
+
+            var min = gc.get(GregorianCalendar.MINUTE).toString()
+
+            var sec = gc.get(GregorianCalendar.SECOND).toString()
+*/
+
+
+
+        var hour = format1.format(gc.time)
+        var minute = format2.format(gc.time)
+        var second = format3.format(gc.time)
+/*            if(Integer.parseInt(hour)<9){
+                hour="0"+hour
+            }
+            if(Integer.parseInt(minute)<9){
+                minute="0"+minute
+
+            }*/
+
+        var hourInt= Integer.parseInt(hour)
+        var minuteInt= Integer.parseInt(minute)
+        var secondInt = Integer.parseInt(second)
+        hourInt = hourInt
+        hourInt = (hourInt/10 shl 4) + (hourInt % 10)
+        minuteInt = (minuteInt/10 shl 4) + (minuteInt % 10)
+        secondInt = (secondInt/10 shl 4) + (secondInt % 10)
+
+        secondInt = secondInt shl 16
+        minuteInt = minuteInt shl 8
+        var localTimeInt = hourInt+minuteInt+secondInt
+
+        var localTime = hour + minute + second
+
+        var localTime2 = Integer.parseInt(localTime)
+
+
+        mRunnable = Runnable {
+
+            writeTime2(localTimeInt)
+
+
+        }
+        val thread = Thread(mRunnable)
+        thread.start()
+
+
+    }
+
+
+    fun writeTime(t:Int){
+
         if (mGattCharacteristics != null) {
 
             for (rowIndex in mGattCharacteristics!!.indices) {
@@ -4016,14 +4147,22 @@ class DeviceControlActivity : Activity() {
                     mNotifyCharacteristic = null
                 }*/
 
+                                            if (mNotifyCharacteristic != null) {
+                                mBluetoothLeService!!.setCharacteristicNotification(
+                                        mNotifyCharacteristic!!, false)
+                                mNotifyCharacteristic = null
+                            }
+                              mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                            it, false)
+                            mNotifyCharacteristic = null }
+
 
                                 // mBluetoothLeService!!.readCharacteristic(characteristic)
-                                characteristic.setValue(localTimeInt, BluetoothGattCharacteristic.FORMAT_UINT32, 0)
+                                characteristic.setValue(t, BluetoothGattCharacteristic.FORMAT_UINT32, 0)
                                 mBluetoothLeService!!.writeCharacteristic(characteristic)
-                                mBluetoothLeService!!.writeCharacteristic2(characteristic)
+                                //mBluetoothLeService2!!.writeCharacteristic2(characteristic)
 
                             }
-
 /*                mPage_setting!!.visibility = VISIBLE
                 mPage_light!!.visibility = INVISIBLE*/
                         }
@@ -4034,7 +4173,58 @@ class DeviceControlActivity : Activity() {
             }
 
         }
+
     }
+
+    fun writeTime2(t:Int){
+
+        if (mGattCharacteristics2 != null) {
+
+            for (rowIndex in mGattCharacteristics2!!.indices) {
+                val row = mGattCharacteristics2!![rowIndex]
+                if (row != null) {
+                    for (columnIndex in row.indices) {
+
+                        if (CURRENT == row[columnIndex].uuid) {
+                            val characteristic = row[columnIndex]
+                            val charaProp = characteristic.properties
+                            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                                // If there is an active notification on a characteristic, clear
+                                // it first so it doesn't update the data field on the user interface.
+/*                if (mNotifyCharacteristic != null) {
+                    mBluetoothLeService!!.setCharacteristicNotification(
+                            mNotifyCharacteristic, false)
+                    mNotifyCharacteristic = null
+                }*/
+
+                                if (mNotifyCharacteristic2 != null) {
+                                    mBluetoothLeService2!!.setCharacteristicNotification2(
+                                            mNotifyCharacteristic2!!, false)
+                                    mNotifyCharacteristic2 = null
+                                }
+                                mNotifyCharacteristic2?.let { mBluetoothLeService2!!.setCharacteristicNotification2(
+                                        it, false)
+                                    mNotifyCharacteristic2 = null }
+
+                                // mBluetoothLeService!!.readCharacteristic(characteristic)
+                                characteristic.setValue(t, BluetoothGattCharacteristic.FORMAT_UINT32, 0)
+                                //mBluetoothLeService!!.writeCharacteristic(characteristic)
+                                mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+
+                            }
+/*                mPage_setting!!.visibility = VISIBLE
+                mPage_light!!.visibility = INVISIBLE*/
+                        }
+
+
+                    }
+                }
+            }
+
+        }
+
+    }
+
 
 
     fun writeBrightness(brightness:Int){
@@ -4103,6 +4293,37 @@ class DeviceControlActivity : Activity() {
         }
     }
 
+    fun writeTemperature2(temperature:Int){
+        if (mGattCharacteristics2 != null) {
+            val characteristic = mGattCharacteristics2!![2][1]
+            val charaProp = characteristic.properties
+            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                // If there is an active notification on a characteristic, clear
+                // it first so it doesn't update the data field on the user interface.
+/*                if (mNotifyCharacteristic != null) {
+                    mBluetoothLeService!!.setCharacteristicNotification(
+                            mNotifyCharacteristic, false)
+                    mNotifyCharacteristic = null
+                }*/
+                /*        mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                    it, false)
+                mNotifyCharacteristic = null }*/
+
+                // mBluetoothLeService!!.readCharacteristic(characteristic)
+                characteristic.setValue(temperature, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
+                mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+            }
+/*                    if (charaProp or BluetoothGattCharacteristic.PROPERTY_NOTIFY > 0) {
+                        mNotifyCharacteristic = characteristic
+                        mBluetoothLeService!!.setCharacteristicNotification(
+                                characteristic, true)
+                    }*/
+            //mPage_setting!!.visibility = VISIBLE
+            //mPage_light!!.visibility = INVISIBLE
+            return
+        }
+    }
+
 
 
     override fun onStart() {
@@ -4113,6 +4334,7 @@ class DeviceControlActivity : Activity() {
     override fun onResume() {
         super.onResume()
         registerReceiver(mGattUpdateReceiver, makeGattUpdateIntentFilter())
+        registerReceiver(mGattUpdateReceiver2, makeGattUpdateIntentFilter())
         if (mBluetoothLeService != null) {
             val result = mBluetoothLeService!!.connect(mDeviceAddresses[0])
             Log.d(TAG, "Connect request result=$result")
@@ -4120,8 +4342,8 @@ class DeviceControlActivity : Activity() {
             Toast.makeText(applicationContext,"connected!!!", Toast.LENGTH_SHORT).show()
         }
         Thread.sleep(100)
-        if (mBluetoothLeService2 != null) {
-            val result2 = mBluetoothLeService2!!.connect2(mDeviceAddress)
+        if (mBluetoothLeService != null) {
+            val result2 = mBluetoothLeService2!!.connect2(mDeviceAddresses[1])
             Log.d(TAG, "Connect request result=$result2")
 
             Toast.makeText(applicationContext,"connected!!!", Toast.LENGTH_SHORT).show()
@@ -4131,6 +4353,7 @@ class DeviceControlActivity : Activity() {
     override fun onPause() {
         super.onPause()
         unregisterReceiver(mGattUpdateReceiver)
+        unregisterReceiver(mGattUpdateReceiver2)
     }
 
     override fun onDestroy() {
@@ -4331,48 +4554,86 @@ fun latitude(angle:Int) {
 
     fun intensity(b:Int) {
         if (mGattCharacteristics != null) {
-            val characteristic = mGattCharacteristics!![2][0]
-            val charaProp = characteristic.properties
-            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
-                // If there is an active notification on a characteristic, clear
-                // it first so it doesn't update the data field on the user interface.
+
+            for (rowIndex in mGattCharacteristics!!.indices) {
+                val row = mGattCharacteristics!![rowIndex]
+                if (row != null) {
+                    for (columnIndex in row.indices) {
+
+                        if (INTENSITY == row[columnIndex].uuid) {
+                            val characteristic = row[columnIndex]
+                            val charaProp = characteristic.properties
+                            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
 
 
-                // mBluetoothLeService!!.readCharacteristic(characteristic)
-                characteristic.setValue(b, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
-                mBluetoothLeService!!.writeCharacteristic(characteristic)
+                                // If there is an active notification on a characteristic, clear
+                                // it first so it doesn't update the data field on the user interface.
+
+                                if (mNotifyCharacteristic != null) {
+                                    mBluetoothLeService!!.setCharacteristicNotification(
+                                            mNotifyCharacteristic!!, false)
+                                    mNotifyCharacteristic = null
+                                }
+                                mNotifyCharacteristic?.let { mBluetoothLeService!!.setCharacteristicNotification(
+                                        it, false)
+                                    mNotifyCharacteristic = null }                                // mBluetoothLeService!!.readCharacteristic(characteristic)
+                                characteristic.setValue(b, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
+                                mBluetoothLeService!!.writeCharacteristic(characteristic)
+                            }
+
+                            //  mPage_setting!!.visibility = VISIBLE
+                            //  mPage_light!!.visibility = INVISIBLE
+
+
+                        }
+                        //    mPage_setting!!.visibility = VISIBLE
+                        //    mPage_light!!.visibility = INVISIBLE
+
+                    }
+                }
             }
-
-            //  mPage_setting!!.visibility = VISIBLE
-            //  mPage_light!!.visibility = INVISIBLE
-            Thread.sleep(100)
         }
-        //    mPage_setting!!.visibility = VISIBLE
-        //    mPage_light!!.visibility = INVISIBLE
-
     }
 
     fun intensity2(b:Int) {
         if (mGattCharacteristics2 != null) {
-            val characteristic = mGattCharacteristics2!![2][0]
-            val charaProp = characteristic.properties
-            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
-                // If there is an active notification on a characteristic, clear
-                // it first so it doesn't update the data field on the user interface.
+            for (rowIndex in mGattCharacteristics2!!.indices) {
+                val row = mGattCharacteristics2!![rowIndex]
+                if (row != null) {
+                    for (columnIndex in row.indices) {
+
+                        if (INTENSITY == row[columnIndex].uuid) {
+                            val characteristic = row[columnIndex]
+                            val charaProp = characteristic.properties
+                            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                                // If there is an active notification on a characteristic, clear
+                                // it first so it doesn't update the data field on the user interface.
+
+                                if (mNotifyCharacteristic2 != null) {
+                                    mBluetoothLeService2!!.setCharacteristicNotification2(
+                                            mNotifyCharacteristic2!!, false)
+                                    mNotifyCharacteristic2 = null
+                                }
+                                mNotifyCharacteristic2?.let { mBluetoothLeService2!!.setCharacteristicNotification2(
+                                        it, false)
+                                    mNotifyCharacteristic2 = null }                                // mBluetoothLeService!!.readCharacteristic(characteristic)
+                                characteristic.setValue(b, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
+                                //mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+                                mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+                            }
 
 
-                // mBluetoothLeService!!.readCharacteristic(characteristic)
-                characteristic.setValue(b, BluetoothGattCharacteristic.FORMAT_UINT8, 0)
-                mBluetoothLeService2!!.writeCharacteristic2(characteristic)
+
+                            //  mPage_setting!!.visibility = VISIBLE
+                            //  mPage_light!!.visibility = INVISIBLE
+                        }
+                        //    mPage_setting!!.visibility = VISIBLE
+                        //    mPage_light!!.visibility = INVISIBLE
+
+                    }
+                }
             }
-
-            //  mPage_setting!!.visibility = VISIBLE
-            //  mPage_light!!.visibility = INVISIBLE
-            Thread.sleep(100)
         }
-        //    mPage_setting!!.visibility = VISIBLE
-        //    mPage_light!!.visibility = INVISIBLE
-
     }
 
     fun display_dashboard() {
@@ -4408,6 +4669,39 @@ fun latitude(angle:Int) {
         }
     }
 
+    fun display_dashboard2() {
+        if (mGattCharacteristics2 != null) {
+
+            for (rowIndex in mGattCharacteristics2!!.indices) {
+                val row = mGattCharacteristics2!![rowIndex]
+                if (row != null) {
+                    for (columnIndex in row.indices) {
+
+                        readMachine2(INTENSITY,row[columnIndex])
+                        readMachine2(TEMPERATURE,row[columnIndex])
+                        readMachine2(LATITUDE,row[columnIndex])
+                        readMachine2(DAYCYCLE,row[columnIndex])
+                        readMachine2(DAYTIME,row[columnIndex])
+                        readMachine2(UV,row[columnIndex])
+                        readMachine2(ALARM,row[columnIndex])
+                        readMachine2(SETTIME,row[columnIndex])
+                        readMachine2(CURRENT,row[columnIndex])
+                        if (BLRU == row[columnIndex].uuid) {
+                            readMachine2(BLRU, row[columnIndex])
+                        }
+                        readMachine2(BLGU,row[columnIndex])
+                        if (BLBU == row[columnIndex].uuid) {
+                            readMachine2(BLBU, row[columnIndex])
+                        }
+                        readMachine2(BLRD,row[columnIndex])
+                        readMachine2(BLGD,row[columnIndex])
+                        readMachine2(BLBD,row[columnIndex])
+                    }
+                }
+            }
+        }
+    }
+
     fun readMachine(uuid1: UUID, characteristic1: BluetoothGattCharacteristic){
         if (uuid1 == characteristic1.uuid) {
             val characteristic = characteristic1
@@ -4427,6 +4721,29 @@ fun latitude(angle:Int) {
                     mNotifyCharacteristic = null
                 }*/
                 mBluetoothLeService!!.readCharacteristic(characteristic)
+                Thread.sleep(100)
+            }
+        }
+    }
+    fun readMachine2(uuid1: UUID, characteristic1: BluetoothGattCharacteristic){
+        if (uuid1 == characteristic1.uuid) {
+            val characteristic = characteristic1
+            val charaProp = characteristic.properties
+
+            if (charaProp or BluetoothGattCharacteristic.PROPERTY_READ > 0) {
+                // If there is an active notification on a characteristic, clear
+                // it first so it doesn't update the data field on the user interface.
+/*                if (mNotifyCharacteristic != null) {
+                    mBluetoothLeService!!.setCharacteristicNotification(
+                            mNotifyCharacteristic!!, false)
+                    mNotifyCharacteristic = null
+                }
+                mNotifyCharacteristic?.let {
+                    mBluetoothLeService!!.setCharacteristicNotification(
+                            it, false)
+                    mNotifyCharacteristic = null
+                }*/
+                mBluetoothLeService2!!.readCharacteristic2(characteristic)
                 Thread.sleep(100)
             }
         }
@@ -4597,17 +4914,21 @@ fun latitude(angle:Int) {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.menu_connect -> {
-                    val intent = Intent(this, DeviceScanActivity::class.java)
+                   /* val intent = Intent(this, DeviceScanActivity::class.java)
                     startActivity(intent)
-
+*/
                 mBluetoothLeService!!.connect(mDeviceAddresses[0])
                 Thread.sleep(100)
+                //mBluetoothLeService!!.connect2(mDeviceAddresses[1])
                 mBluetoothLeService2!!.connect2(mDeviceAddresses[1])
 
                 return true
             }
             R.id.menu_disconnect -> {
                 mBluetoothLeService!!.disconnect()
+                //mBluetoothLeService!!.disconnect2()
+                val intent = Intent(this, DeviceScanActivity::class.java)
+                startActivity(intent)
                 mBluetoothLeService2!!.disconnect2()
 
                 return true
@@ -4740,10 +5061,29 @@ fun latitude(angle:Int) {
         mGattServicesList!!.setAdapter(gattServiceAdapter)
 
 
+        val builder = AlertDialog.Builder(this)
+        val dialogView = layoutInflater.inflate(R.layout.custom_dialog, null)
+
+
+        val animationView = dialogView.findViewById<LottieAnimationView>(R.id.lottieAnimView)
+        //val animationView = findViewById<LottieAnimationView>(R.id.lottieAnimView)
+        animationView.setAnimation("8661-rotating-sun.json")
+        animationView.loop(true)
+        animationView.playAnimation()
+
+
+        val k = builder.setView(dialogView).show()
+
+
         mRunnable = Runnable {
+
             writeCurTime()
-            Thread.sleep(100)
+            Thread.sleep(200)
             display_dashboard()
+            Thread.sleep(200)
+
+
+            k.dismiss()
 
         }
 
@@ -4793,19 +5133,31 @@ fun latitude(angle:Int) {
                 android.R.layout.simple_expandable_list_item_2,
                 arrayOf(LIST_NAME, LIST_UUID),
                 intArrayOf(android.R.id.text1, android.R.id.text2),
-                gattCharacteristicData,
+                gattCharacteristicData2,
                 android.R.layout.simple_expandable_list_item_2,
                 arrayOf(LIST_NAME, LIST_UUID),
                 intArrayOf(android.R.id.text1, android.R.id.text2)
         )
        // mGattServicesList2!!.setAdapter(gattServiceAdapter)
+        val builder = AlertDialog.Builder(this)
+        val dialogView = layoutInflater.inflate(R.layout.custom_dialog, null)
 
+
+        val animationView = dialogView.findViewById<LottieAnimationView>(R.id.lottieAnimView)
+        //val animationView = findViewById<LottieAnimationView>(R.id.lottieAnimView)
+        animationView.setAnimation("8661-rotating-sun.json")
+        animationView.loop(true)
+        animationView.playAnimation()
+
+
+        val k = builder.setView(dialogView).show()
 
         mRunnable = Runnable {
-            writeCurTime()
-            Thread.sleep(100)
-            display_dashboard()
-
+            //writeCurTime() 여기에 write time 2 를넣자 순서대
+            writeCurTime2()
+            //display_dashboard()
+            display_dashboard2()
+            k.dismiss()
         }
 
         val thread = Thread(mRunnable)

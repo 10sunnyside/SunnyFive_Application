@@ -21,36 +21,48 @@
     <!--android:background="@color/colorAppBG"
     앱 배경색 변경-->
 
+
     <LinearLayout
-        android:id="@+id/page_main"
         android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/colorBlack"
-        android:layout_weight="0">
-
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        >
         <Button
-            android:id="@+id/button_1"
-            android:layout_width="0sp"
-            android:layout_height="200sp"
+            android:id="@+id/button_language"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_margin="2sp"
-            android:layout_weight="1"
-            android:text="1"
-            android:textSize="100sp"
-            android:background="@drawable/button_background"/>
+            android:text="한 글"
+            android:layout_weight="1"/>
         <Button
-        android:id="@+id/button_2"
-        android:layout_width="0sp"
-        android:layout_height="200sp"
-        android:layout_margin="2sp"
-        android:layout_weight="1"
-        android:text="2"
-            android:textSize="100sp"
-            android:background="@drawable/button_background"/>
-
-            </LinearLayout>
-
-
-
+            android:id="@+id/button_demo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:text="Demo On"
+            android:layout_weight="1"/>
+        <Button
+            android:id="@+id/button_reset"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:text="Reset"
+            android:layout_weight="1"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        >
+        <Button
+            android:id="@+id/button_write"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2sp"
+            android:text="Save"
+            android:layout_weight="1"/>
+    </LinearLayout>
 
 </ScrollView>
